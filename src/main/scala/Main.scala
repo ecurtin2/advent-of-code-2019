@@ -5,6 +5,8 @@ import scala.math.max
 
 object Main {
 
+  val DEFAULT_DAY: Int = 1
+
   def readlines(filename: String): List[String] = {
     val source = Source.fromFile(filename)
     val lines = source.getLines.toList
@@ -14,7 +16,7 @@ object Main {
 
   def parse(args: List[String]): Int = {
     if (args.length == 0) {
-      1
+      DEFAULT_DAY
     } else {
       args.head.toInt
     }
