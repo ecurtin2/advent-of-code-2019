@@ -19,12 +19,12 @@ package aoc2019 {
     }
 
     override def compute(data: List[String]): Tuple2[Int, Int] = {
+      // Part 1
       assert(calculate_fuel(12) == 2)
       assert(calculate_fuel(14) == 2)
       assert(calculate_fuel(1969) == 654)
       assert(calculate_fuel(100756) == 33583)
 
-      // Part 1
       val masses = data.map(_.toInt)
       val total_fuel = masses.map(calculate_fuel).sum
 
