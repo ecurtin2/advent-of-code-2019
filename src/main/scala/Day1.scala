@@ -19,22 +19,8 @@ package aoc2019 {
     }
 
     override def compute(data: List[String]): Tuple2[Int, Int] = {
-      // Part 1
-      assert(calculate_fuel(12) == 2)
-      assert(calculate_fuel(14) == 2)
-      assert(calculate_fuel(1969) == 654)
-      assert(calculate_fuel(100756) == 33583)
-
       val masses = data.map(_.toInt)
-      val total_fuel = masses.map(calculate_fuel).sum
-
-      // Part 2
-      assert(calc_fuel_recursive(14) == 2)
-      assert(calc_fuel_recursive(1969) == 966)
-      assert(calc_fuel_recursive(100756) == 50346)
-      val total_fuel_recursive = masses.map(calc_fuel_recursive).sum
-
-      (total_fuel, total_fuel_recursive)
+      (masses.map(calculate_fuel).sum, masses.map(calc_fuel_recursive).sum)
     }
   }
 }

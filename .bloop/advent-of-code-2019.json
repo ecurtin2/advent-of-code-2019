@@ -12,10 +12,12 @@
         "dependencies" : [
         ],
         "classpath" : [
-            "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.6/scala-library-2.11.6.jar",
             "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-macros_2.11/2.0.0/cats-macros_2.11-2.0.0.jar",
+            "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.6/scala-reflect-2.11.6.jar",
+            "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_2.11/2.0.0/cats-kernel_2.11-2.0.0.jar",
             "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_2.11/2.0.0/cats-core_2.11-2.0.0.jar",
-            "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_2.11/2.0.0/cats-kernel_2.11-2.0.0.jar"
+            "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalactic/scalactic_2.11/3.1.0/scalactic_2.11-3.1.0.jar",
+            "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.6/scala-library-2.11.6.jar"
         ],
         "out" : "/home/evan/projects/advent-of-code-2019/.bloop/advent-of-code-2019",
         "classesDir" : "/home/evan/projects/advent-of-code-2019/.bloop/advent-of-code-2019/scala-2.11/classes",
@@ -100,23 +102,6 @@
         "resolution" : {
             "modules" : [
                 {
-                    "organization" : "org.scala-lang",
-                    "name" : "scala-library",
-                    "version" : "2.11.6",
-                    "configurations" : "default",
-                    "artifacts" : [
-                        {
-                            "name" : "scala-library",
-                            "path" : "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.6/scala-library-2.11.6.jar"
-                        },
-                        {
-                            "name" : "scala-library",
-                            "classifier" : "sources",
-                            "path" : "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.6/scala-library-2.11.6-sources.jar"
-                        }
-                    ]
-                },
-                {
                     "organization" : "org.typelevel",
                     "name" : "cats-macros_2.11",
                     "version" : "2.0.0",
@@ -130,6 +115,40 @@
                             "name" : "cats-macros_2.11",
                             "classifier" : "sources",
                             "path" : "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-macros_2.11/2.0.0/cats-macros_2.11-2.0.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.scala-lang",
+                    "name" : "scala-reflect",
+                    "version" : "2.11.6",
+                    "configurations" : "default",
+                    "artifacts" : [
+                        {
+                            "name" : "scala-reflect",
+                            "path" : "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.6/scala-reflect-2.11.6.jar"
+                        },
+                        {
+                            "name" : "scala-reflect",
+                            "classifier" : "sources",
+                            "path" : "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.6/scala-reflect-2.11.6-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.typelevel",
+                    "name" : "cats-kernel_2.11",
+                    "version" : "2.0.0",
+                    "configurations" : "default",
+                    "artifacts" : [
+                        {
+                            "name" : "cats-kernel_2.11",
+                            "path" : "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_2.11/2.0.0/cats-kernel_2.11-2.0.0.jar"
+                        },
+                        {
+                            "name" : "cats-kernel_2.11",
+                            "classifier" : "sources",
+                            "path" : "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_2.11/2.0.0/cats-kernel_2.11-2.0.0-sources.jar"
                         }
                     ]
                 },
@@ -151,19 +170,36 @@
                     ]
                 },
                 {
-                    "organization" : "org.typelevel",
-                    "name" : "cats-kernel_2.11",
-                    "version" : "2.0.0",
+                    "organization" : "org.scalactic",
+                    "name" : "scalactic_2.11",
+                    "version" : "3.1.0",
                     "configurations" : "default",
                     "artifacts" : [
                         {
-                            "name" : "cats-kernel_2.11",
-                            "path" : "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_2.11/2.0.0/cats-kernel_2.11-2.0.0.jar"
+                            "name" : "scalactic_2.11",
+                            "path" : "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalactic/scalactic_2.11/3.1.0/scalactic_2.11-3.1.0.jar"
                         },
                         {
-                            "name" : "cats-kernel_2.11",
+                            "name" : "scalactic_2.11",
                             "classifier" : "sources",
-                            "path" : "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_2.11/2.0.0/cats-kernel_2.11-2.0.0-sources.jar"
+                            "path" : "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalactic/scalactic_2.11/3.1.0/scalactic_2.11-3.1.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.scala-lang",
+                    "name" : "scala-library",
+                    "version" : "2.11.6",
+                    "configurations" : "default",
+                    "artifacts" : [
+                        {
+                            "name" : "scala-library",
+                            "path" : "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.6/scala-library-2.11.6.jar"
+                        },
+                        {
+                            "name" : "scala-library",
+                            "classifier" : "sources",
+                            "path" : "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.6/scala-library-2.11.6-sources.jar"
                         }
                     ]
                 },
