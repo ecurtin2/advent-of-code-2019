@@ -3,7 +3,7 @@ import scala.math.max
 
 package aoc2019 {
 
-  object Day1 {
+  object Day1 extends aoc2019.Day {
 
     def calculate_fuel(mass: Int): Int = {
       max(mass / 3 - 2, 0)
@@ -18,15 +18,14 @@ package aoc2019 {
       }
     }
 
-    def compute(data: List[String]): List[String] = {
+    override def compute(data: List[String]): Tuple2[Int, Int] = {
       assert(calculate_fuel(12) == 2)
       assert(calculate_fuel(14) == 2)
       assert(calculate_fuel(1969) == 654)
       assert(calculate_fuel(100756) == 33583)
 
-      val str2int = (s: String) => s.toInt
       // Part 1
-      val masses = data.map(str2int)
+      val masses = data.map(_.toInt)
       val total_fuel = masses.map(calculate_fuel).sum
 
       // Part 2
@@ -35,14 +34,7 @@ package aoc2019 {
       assert(calc_fuel_recursive(100756) == 50346)
       val total_fuel_recursive = masses.map(calc_fuel_recursive).sum
 
-      List(
-        "Solution to Day 1 Part 1: ",
-        total_fuel.toString,
-        "\n",
-        "Solution to Day 1 Part 2: ",
-        total_fuel_recursive.toString,
-        "\n"
-      )
+      (total_fuel, total_fuel_recursive)
     }
   }
 }

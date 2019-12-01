@@ -23,10 +23,12 @@ object Main {
   def main(args: Array[String]) {
     val day = parse(args.toList)
 
-    val result: List[String] = day match {
+    val result: Tuple2[Any, Any] = day match {
       case 1 => aoc2019.Day1.compute(readlines("./data/day1_p1.txt"))
       case 2 => aoc2019.Day1.compute(readlines("./data/day1_p1.txt"))
     }
-    println(result.mkString(""))
+    println("Solutions for Advent of Code Day " + day + ":")
+    println("Part 1: " + result._1)
+    println("Part 2: " + result._2)
   }
 }
