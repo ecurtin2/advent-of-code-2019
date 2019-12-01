@@ -1,0 +1,192 @@
+{
+    "version" : "1.1.2",
+    "project" : {
+        "name" : "advent-of-code-2019-test",
+        "directory" : "/home/evan/projects/advent-of-code-2019",
+        "sources" : [
+            "/home/evan/projects/advent-of-code-2019/src/test/scala-2.11",
+            "/home/evan/projects/advent-of-code-2019/src/test/scala",
+            "/home/evan/projects/advent-of-code-2019/src/test/java",
+            "/home/evan/projects/advent-of-code-2019/target/scala-2.11/src_managed/test"
+        ],
+        "dependencies" : [
+            "advent-of-code-2019"
+        ],
+        "classpath" : [
+            "/home/evan/projects/advent-of-code-2019/.bloop/advent-of-code-2019/scala-2.11/classes",
+            "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.6/scala-library-2.11.6.jar",
+            "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-macros_2.11/2.0.0/cats-macros_2.11-2.0.0.jar",
+            "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_2.11/2.0.0/cats-core_2.11-2.0.0.jar",
+            "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_2.11/2.0.0/cats-kernel_2.11-2.0.0.jar"
+        ],
+        "out" : "/home/evan/projects/advent-of-code-2019/.bloop/advent-of-code-2019",
+        "classesDir" : "/home/evan/projects/advent-of-code-2019/.bloop/advent-of-code-2019/scala-2.11/test-classes",
+        "resources" : [
+            "/home/evan/projects/advent-of-code-2019/src/test/resources",
+            "/home/evan/projects/advent-of-code-2019/target/scala-2.11/resource_managed/test"
+        ],
+        "scala" : {
+            "organization" : "org.scala-lang",
+            "name" : "scala-compiler",
+            "version" : "2.11.6",
+            "options" : [
+            ],
+            "jars" : [
+                "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.6/scala-reflect-2.11.6.jar",
+                "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/jline/jline/2.12.1/jline-2.12.1.jar",
+                "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.11/1.0.3/scala-parser-combinators_2.11-1.0.3.jar",
+                "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.11.6/scala-compiler-2.11.6.jar",
+                "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.6/scala-library-2.11.6.jar",
+                "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.11/1.0.3/scala-xml_2.11-1.0.3.jar"
+            ],
+            "setup" : {
+                "order" : "mixed",
+                "addLibraryToBootClasspath" : true,
+                "addCompilerToClasspath" : false,
+                "addExtraJarsToClasspath" : false,
+                "manageBootClasspath" : true,
+                "filterLibraryFromClasspath" : true
+            }
+        },
+        "java" : {
+            "options" : [
+            ]
+        },
+        "test" : {
+            "frameworks" : [
+                {
+                    "names" : [
+                        "org.scalacheck.ScalaCheckFramework"
+                    ]
+                },
+                {
+                    "names" : [
+                        "org.specs2.runner.Specs2Framework",
+                        "org.specs2.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names" : [
+                        "org.specs.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names" : [
+                        "org.scalatest.tools.Framework",
+                        "org.scalatest.tools.ScalaTestFramework"
+                    ]
+                },
+                {
+                    "names" : [
+                        "com.novocode.junit.JUnitFramework"
+                    ]
+                }
+            ],
+            "options" : {
+                "excludes" : [
+                ],
+                "arguments" : [
+                ]
+            }
+        },
+        "platform" : {
+            "name" : "jvm",
+            "config" : {
+                "home" : "/home/evan/anaconda3/jre",
+                "options" : [
+                ]
+            },
+            "mainClass" : [
+            ]
+        },
+        "resolution" : {
+            "modules" : [
+                {
+                    "organization" : "org.scala-lang",
+                    "name" : "scala-library",
+                    "version" : "2.11.6",
+                    "configurations" : "default",
+                    "artifacts" : [
+                        {
+                            "name" : "scala-library",
+                            "path" : "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.6/scala-library-2.11.6.jar"
+                        },
+                        {
+                            "name" : "scala-library",
+                            "classifier" : "sources",
+                            "path" : "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.6/scala-library-2.11.6-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.typelevel",
+                    "name" : "cats-macros_2.11",
+                    "version" : "2.0.0",
+                    "configurations" : "default",
+                    "artifacts" : [
+                        {
+                            "name" : "cats-macros_2.11",
+                            "path" : "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-macros_2.11/2.0.0/cats-macros_2.11-2.0.0.jar"
+                        },
+                        {
+                            "name" : "cats-macros_2.11",
+                            "classifier" : "sources",
+                            "path" : "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-macros_2.11/2.0.0/cats-macros_2.11-2.0.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.typelevel",
+                    "name" : "cats-core_2.11",
+                    "version" : "2.0.0",
+                    "configurations" : "default",
+                    "artifacts" : [
+                        {
+                            "name" : "cats-core_2.11",
+                            "path" : "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_2.11/2.0.0/cats-core_2.11-2.0.0.jar"
+                        },
+                        {
+                            "name" : "cats-core_2.11",
+                            "classifier" : "sources",
+                            "path" : "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_2.11/2.0.0/cats-core_2.11-2.0.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.typelevel",
+                    "name" : "cats-kernel_2.11",
+                    "version" : "2.0.0",
+                    "configurations" : "default",
+                    "artifacts" : [
+                        {
+                            "name" : "cats-kernel_2.11",
+                            "path" : "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_2.11/2.0.0/cats-kernel_2.11-2.0.0.jar"
+                        },
+                        {
+                            "name" : "cats-kernel_2.11",
+                            "classifier" : "sources",
+                            "path" : "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_2.11/2.0.0/cats-kernel_2.11-2.0.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization" : "org.scala-lang",
+                    "name" : "scala-library",
+                    "version" : "2.11.6",
+                    "configurations" : "optional",
+                    "artifacts" : [
+                        {
+                            "name" : "scala-library",
+                            "path" : "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.6/scala-library-2.11.6.jar"
+                        },
+                        {
+                            "name" : "scala-library",
+                            "classifier" : "sources",
+                            "path" : "/home/evan/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.6/scala-library-2.11.6-sources.jar"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
