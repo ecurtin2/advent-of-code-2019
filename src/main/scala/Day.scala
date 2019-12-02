@@ -1,5 +1,6 @@
 package aoc2019 {
   trait Day {
-    def compute(data: List[String]): Tuple2[Any, Any]
+    def compute_part1(data: List[String]): Any
+    def compute_part2(data: List[String]): Any
   }
 }
