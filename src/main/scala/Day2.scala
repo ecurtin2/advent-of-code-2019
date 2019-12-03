@@ -14,16 +14,12 @@ package aoc2019 {
       if (result._1) {
         result._2
       } else {
-        execute_opcode(
-          result._2,
-          pointer
-            + result._3
-        )
+        execute_opcode(result._2, pointer + result._3)
       }
     }
 
     def executeNounVerb(code: List[Int], noun: Int, verb: Int): List[Int] = {
-        execute_opcode(code.updated(1, noun).updated(2, verb))
+      execute_opcode(code.updated(1, noun).updated(2, verb))
     }
 
     override def compute_part1(data: List[String]): Int = {
@@ -35,15 +31,14 @@ package aoc2019 {
       val input = data.map(_.toInt)
       val range = 0 to 99
       val nums = range.flatMap(x => range.map(y => (x, y)))
-      val results = nums.map(nounVerb => executeNounVerb(input, nounVerb._1, nounVerb._2)(0))
+      val results = nums.map(
+        nounVerb => executeNounVerb(input, nounVerb._1, nounVerb._2)(0)
+      )
       val found = (nums zip results).find(r => r._2 == 19690720)
-      val output = found match {
-          case Some(((noun, verb), result)) => 100 * noun + verb
-          case None => -1
+      found match {
+        case Some(((noun, verb), result)) => 100 * noun + verb
+        case None                         => -1
       }
-      output
-
     }
-
   }
 }
