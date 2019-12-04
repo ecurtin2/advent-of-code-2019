@@ -34,6 +34,8 @@ object Main {
       case (1, 2) => aoc2019.Day1.compute_part2(readlines("./data/day1_p1.txt"))
       case (2, 1) => aoc2019.Day2.compute_part1(readlines("./data/day2_p1.txt"))
       case (2, 2) => aoc2019.Day2.compute_part2(readlines("./data/day2_p1.txt"))
+      case (3, 1) => aoc2019.Day3.compute_part1(readlines("./data/day3_p1.txt"))
+      case (3, 2) => aoc2019.Day3.compute_part2(readlines("./data/day3_p1.txt"))
     }
 
     val day = dayPart._1
