@@ -42,8 +42,8 @@ package aoc2019 {
       g ++ updates
     }
 
-    def getAllLines(moves: List[Move], start: Point): List[List[Point]] = {
-      var pos = start
+    def getAllLines(moves: List[Move]): List[List[Point]] = {
+      var pos = (0, 0)
       val lines = for { move <- moves } yield {
         val line = getLine(pos._1, pos._2, move)
         pos = line.last
@@ -56,44 +56,32 @@ package aoc2019 {
     def manhattan_distance(p: Point): Int = abs(p._1) + abs(p._2)
 
     def nsteps(points: List[Point], end: Point): Int = {
-      points.span(_ != end)._1.distinct.length + 1
+      points.indexOf(end) + 1 // Add one for zero-based index
     }
 
     override def compute_part1(data: List[String]): Int = {
       val grid: Map[Tuple2[Int, Int], Set[Int]] = Map()
 
-      val moves = parsePath(data(0))
-      val lines = getAllLines(moves, (0, 0))
-      val steps = lines.flatten
+      val steps = getAllLines(parsePath(data(0))).flatten
       val g = updatedGrid(grid, steps, 1)
 
-      val moves2 = parsePath(data(1))
-      val lines2 = getAllLines(moves2, (0, 0))
-      val steps2 = lines2.flatten
+      val steps2 = getAllLines(parsePath(data(1))).flatten
       val g2 = updatedGrid(g, steps2, 2)
-
-      val overlaps = g2.filter(x => x._2 == Set(1, 2)).keys
-      val distances = overlaps.map(manhattan_distance)
-
-      distances.min
+      
+      g2.filter(x => x._2 == Set(1, 2)).keys.map(manhattan_distance).min
     }
 
     override def compute_part2(data: List[String]): Int = {
       val grid: Map[Tuple2[Int, Int], Set[Int]] = Map()
 
-      val moves = parsePath(data(0))
-      val lines = getAllLines(moves, (0, 0))
-      val steps = lines.flatten
+      val steps = getAllLines(parsePath(data(0))).flatten
       val g = updatedGrid(grid, steps, 1)
 
-      val moves2 = parsePath(data(1))
-      val lines2 = getAllLines(moves2, (0, 0))
-      val steps2 = lines2.flatten
+      val steps2 = getAllLines(parsePath(data(1))).flatten
       val g2 = updatedGrid(g, steps2, 2)
 
       val overlaps = g2.filter(x => x._2 == Set(1, 2)).keys
-      val distances = overlaps.map(p => nsteps(steps, p) + nsteps(steps2, p))
-      distances.min
+      overlaps.map(p => nsteps(steps, p) + nsteps(steps2, p)).min
     }
   }
 }
