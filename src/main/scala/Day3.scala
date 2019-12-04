@@ -14,24 +14,21 @@ package aoc2019 {
     type Point = Tuple2[Int, Int]
     type Move = Tuple2[Direction.Value, Int]
 
-    def getLine(x: Int, y: Int, move: Move): List[Point] = {
+    def pointsFromMove(x: Int, y: Int, move: Move): List[Point] = {
       val points = move match {
-        case (Direction.Up, d) => {
+        case (Direction.Up, d) => 
           for (yi <- (y + 1 to y + d)) yield (x, yi)
-        }
         case (Direction.Down, d) =>
-          for (yi <- y - 1 to y - d by -1)
-            yield (x, yi)
+          for (yi <- y - 1 to y - d by -1) yield (x, yi)
         case (Direction.Left, d) =>
-          for (xi <- x - 1 to x - d by -1)
-            yield (xi, y)
+          for (xi <- x - 1 to x - d by -1) yield (xi, y)
         case (Direction.Right, d) =>
           for (xi <- x + 1 to x + d) yield (xi, y)
       }
       points.toList
     }
 
-    def parsePath(s: String): List[Move] = {
+    def movesFromString(s: String): List[Move] = {
       s.split(",")
         .map(s => (Direction.withName(s(0).toString), s.drop(1).toInt))
         .toList
@@ -42,15 +39,9 @@ package aoc2019 {
       g ++ updates
     }
 
-    def getAllLines(moves: List[Move]): List[List[Point]] = {
-      var pos = (0, 0)
-      val lines = for { move <- moves } yield {
-        val line = getLine(pos._1, pos._2, move)
-        pos = line.last
-        line
-      }
-      lines
-
+    def pointsFromMoves(moves: List[Move]): List[Point] = {
+      moves.foldLeft(List((0, 0)))((points, move) =>  points ++ pointsFromMove(points.last._1, points.last._2, move)).drop(1)
+    
     }
 
     def manhattan_distance(p: Point): Int = abs(p._1) + abs(p._2)
@@ -62,22 +53,25 @@ package aoc2019 {
     override def compute_part1(data: List[String]): Int = {
       val grid: Map[Tuple2[Int, Int], Set[Int]] = Map()
 
-      val steps = getAllLines(parsePath(data(0))).flatten
+      val steps = pointsFromMoves(movesFromString(data(0)))
       val g = updatedGrid(grid, steps, 1)
 
-      val steps2 = getAllLines(parsePath(data(1))).flatten
+      val steps2 = pointsFromMoves(movesFromString(data(1)))
       val g2 = updatedGrid(g, steps2, 2)
-      
+
+      println(steps)
+      println(steps2)
+
       g2.filter(x => x._2 == Set(1, 2)).keys.map(manhattan_distance).min
     }
 
     override def compute_part2(data: List[String]): Int = {
       val grid: Map[Tuple2[Int, Int], Set[Int]] = Map()
 
-      val steps = getAllLines(parsePath(data(0))).flatten
+      val steps = pointsFromMoves(movesFromString(data(0)))
       val g = updatedGrid(grid, steps, 1)
 
-      val steps2 = getAllLines(parsePath(data(1))).flatten
+      val steps2 = pointsFromMoves(movesFromString(data(1)))
       val g2 = updatedGrid(g, steps2, 2)
 
       val overlaps = g2.filter(x => x._2 == Set(1, 2)).keys
