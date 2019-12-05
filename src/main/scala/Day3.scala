@@ -16,7 +16,7 @@ package aoc2019 {
 
     def pointsFromMove(x: Int, y: Int, move: Move): List[Point] = {
       val points = move match {
-        case (Direction.Up, d) => 
+        case (Direction.Up, d) =>
           for (yi <- (y + 1 to y + d)) yield (x, yi)
         case (Direction.Down, d) =>
           for (yi <- y - 1 to y - d by -1) yield (x, yi)
@@ -40,8 +40,12 @@ package aoc2019 {
     }
 
     def pointsFromMoves(moves: List[Move]): List[Point] = {
-      moves.foldLeft(List((0, 0)))((points, move) =>  points ++ pointsFromMove(points.last._1, points.last._2, move)).drop(1)
-    
+      moves
+        .foldLeft(List((0, 0)))(
+          (points, move) =>
+            points ++ pointsFromMove(points.last._1, points.last._2, move)
+        )
+        .drop(1) // Remove origin
     }
 
     def manhattan_distance(p: Point): Int = abs(p._1) + abs(p._2)
